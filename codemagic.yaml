@@ -28,7 +28,6 @@ workflows:
       - name: Build ipa for debug mode
         script: | 
           cd $CM_BUILD_DIR/iosApp
-          xcodebuild -project iosApp.xcodeproj -scheme iosApp -config Debug
           xcodebuild \
           -project "$XCODE_WORKSPACE" \
           -scheme "$XCODE_SCHEME" \
