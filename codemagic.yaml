@@ -31,7 +31,7 @@ workflows:
           xcode-project build-ipa \
           --project "$XCODE_WORKSPACE" \
           --scheme "$XCODE_SCHEME"
-          --config Debug
+          --configuration Debug
     artifacts:
       - iosApp/build/ios/ipa/*.ipa
     publishing:
