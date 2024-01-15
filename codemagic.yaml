@@ -6,6 +6,8 @@ workflows:
       vars:
         XCODE_WORKSPACE: "iosApp.xcodeproj"
         XCODE_SCHEME: "iosApp"
+      xcode: latest
+      cocoapods: default
     scripts:
       - name: Cocoapods Initialization
         script: |
@@ -21,7 +23,7 @@ workflows:
       - name: Build ipa for debug mode
         script: | 
           cd $CM_BUILD_DIR/iosApp
-          xcode-project build-ipa \
+          xcode-project build-ipa -sdk iphonesimulator -configuration Debug \
           --workspace "$XCODE_WORKSPACE" \
           --scheme "$XCODE_SCHEME"
     artifacts:
