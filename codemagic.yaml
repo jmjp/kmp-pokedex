@@ -8,6 +8,7 @@ workflows:
         XCODE_SCHEME: "iosApp"
       xcode: latest
       cocoapods: default
+      java: 21
     scripts:
       - name: Cocoapods Initialization
         script: |
@@ -23,9 +24,6 @@ workflows:
       - name: Make gradlew executable
         script: |
           chmod +x ./gradlew
-      - name: Create Java_Home variable
-        script: |
-          export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home
       - name: Build ipa for debug mode
         script: | 
           cd $CM_BUILD_DIR/iosApp
