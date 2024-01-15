@@ -22,8 +22,7 @@ workflows:
           agvtool new-version -all $(($LATEST_BUILD_NUMBER + 1))
       - name: Build ipa for debugging mode
         script: | 
-          cd $CM_BUILD_DIR/iosApp
-          xcodebuild -sdk iphonesimulator -workspace "$XCODE_WORKSPACE" -scheme "$XCODE_SCHEME" -configuration Debug 
+          cd . && cd iosApp && xcodebuild -sdk iphonesimulator -workspace "$XCODE_WORKSPACE" -scheme "$XCODE_SCHEME" -configuration Debug
     artifacts:
       - iosApp/build/ios/ipa/*.ipa
     publishing:
