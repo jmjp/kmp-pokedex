@@ -20,8 +20,12 @@ workflows:
       - name: Set up code signing settings on Xcode project
         script: |
           xcode-project use-profiles
-      - name: Make gradlew executablele
-        script: chmod +x ./gradlew
+      - name: Make gradlew executable
+        script: |
+          chmod +x ./gradlew
+      - name: Create Java_Home variable
+        script: |
+          export JAVA_HOME=/Library/Java/JavaVirtualMachines/zulu-21.jdk/Contents/Home
       - name: Build ipa for debug mode
         script: | 
           cd $CM_BUILD_DIR/iosApp
