@@ -20,12 +20,17 @@ workflows:
       - name: Set up code signing settings on Xcode project
         script: |
           xcode-project use-profiles
+      - name: Get build list
+        script: |
+          xcode-project --list --workspace "$XCODE_WORKSPACE" 
       - name: Build ipa for debug mode
         script: | 
           cd $CM_BUILD_DIR/iosApp
           xcode-project build-ipa \
           --workspace "$XCODE_WORKSPACE" \
           --scheme "$XCODE_SCHEME"
+          --sdk iphonesimulator
+          --config Debug
     artifacts:
       - iosApp/build/ios/ipa/*.ipa
     publishing:
