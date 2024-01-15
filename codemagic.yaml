@@ -25,6 +25,7 @@ workflows:
           -scheme "$XCODE_SCHEME" \
           -destination 'platform=iOS Simulator,name=iPhone 14' \
           -config Debug \
+          -sdk iphonesimulator \
           CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
     artifacts:
       - iosApp/build/ios/ipa/*.ipa
