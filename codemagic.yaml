@@ -20,6 +20,8 @@ workflows:
       - name: Set up code signing settings on Xcode project
         script: |
           xcode-project use-profiles
+      - name: Make gradlew executablele
+        script: chmod +x ./gradlew
       - name: Build ipa for debug mode
         script: | 
           cd $CM_BUILD_DIR/iosApp
