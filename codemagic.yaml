@@ -28,7 +28,7 @@ workflows:
       - name: Build ipa for debug mode
         script: | 
           cd $CM_BUILD_DIR/iosApp
-          xcodebuild -workspace iosApp.xcodeproj -scheme iosApp --no-show-build-settings
+          xcodebuild -workspace iosApp.xcodeproj -scheme iosApp
     artifacts:
       - iosApp/build/ios/ipa/*.ipa
     publishing:
