@@ -32,8 +32,7 @@ workflows:
           -project "$XCODE_WORKSPACE" \
           -scheme "$XCODE_SCHEME" \
           -sdk iphonesimulator \
-          -destination 'platform=iOS Simulator,name=iPhone 12 Pro,OS=14.5' \
-          -derivedDataPath Build/ \
+          -destination 'platform=iOS Simulator,name=iPhone 14 Pro,OS=17.2' \
           -config Debug \
           CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO
     artifacts:
