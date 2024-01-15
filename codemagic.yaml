@@ -11,14 +11,6 @@ workflows:
       cocoapods: default
       java: 21
     scripts:
-      - name: Cocoapods Initialization
-        script: |
-          cd $CM_BUILD_DIR/iosApp
-          pod init
-      - name: Cocoapods installation
-        script: | 
-          cd $CM_BUILD_DIR/iosApp
-          pod install
       - name: Set up code signing settings on Xcode project
         script: |
           xcode-project use-profiles
