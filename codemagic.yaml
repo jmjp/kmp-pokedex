@@ -7,6 +7,10 @@ workflows:
         XCODE_WORKSPACE: "iosApp.xcodeproj"
         XCODE_SCHEME: "iosApp"
     scripts:
+      - name: Initialize Cocoapods
+        script: |
+          cd $CM_BUILD_DIR/iosApp
+          pod init
       - name: Cocoapods installation
         script: | 
           cd $CM_BUILD_DIR/iosApp
